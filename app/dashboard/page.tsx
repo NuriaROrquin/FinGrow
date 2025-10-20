@@ -327,7 +327,7 @@ export default function DashboardPage() {
               <CardDescription>Compara tus ingresos y gastos a lo largo del tiempo</CardDescription>
             </CardHeader>
             <CardContent>
-              <ChartContainer config={chartConfig} className="h-[300px]">
+              <ChartContainer config={chartConfig} className="h-[300px] w-full">
                 <LineChart data={incomeVsExpenseData}>
                   <CartesianGrid strokeDasharray="3 3" />
                   <XAxis dataKey="month" />
@@ -348,8 +348,8 @@ export default function DashboardPage() {
               <CardDescription>Desglose de tus gastos por categoría</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="grid gap-6 md:grid-cols-2">
-                <ChartContainer config={categoryChartConfig} className="h-[300px]">
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                <ChartContainer config={categoryChartConfig} className="h-[300px] w-full">
                   <PieChart>
                     <Pie
                       data={categoryData}

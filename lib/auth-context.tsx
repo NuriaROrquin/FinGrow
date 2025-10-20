@@ -31,9 +31,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const logout = () => {
     setIsAuthenticated(false)
-    setRole("empleado")
-    setUserName("Usuario")
-    router.push("/login/empleado")
+    router.push("/")
   }
 
   return (

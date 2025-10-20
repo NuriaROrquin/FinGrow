@@ -113,7 +113,7 @@ export default function ReportsPage() {
 	return (
 		<div className="space-y-6">
 			{/* Header */}
-			<div className="flex items-center justify-between">
+			<div className="flex items-center justify-between flex-col lg:flex-row gap-4">
 				<div>
 					<h1 className="text-3xl font-bold text-balance">Reportes Financieros</h1>
 					<p className="text-muted-foreground mt-1">Análisis completo de tus datos financieros</p>

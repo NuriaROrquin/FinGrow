@@ -178,7 +178,7 @@ export default function BudgetsPage() {
         </TabsList>
 
         <TabsContent value="budgets" className="space-y-4">
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between items-center gap-2">
             <h2 className="text-xl font-semibold">Presupuestos Mensuales</h2>
             <Dialog open={isBudgetDialogOpen} onOpenChange={setIsBudgetDialogOpen}>
               <DialogTrigger asChild>

@@ -216,7 +216,7 @@ export default function InvestmentsPage() {
         </Card>
       </div>
 
-      <div className="grid gap-4 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
         {/* Columna principal con gráficos */}
         <div className="lg:col-span-2 space-y-4">
           {/* Gráfico de rendimiento histórico */}
@@ -226,7 +226,7 @@ export default function InvestmentsPage() {
               <CardDescription>Evolución del valor de tu portafolio en los últimos 6 meses</CardDescription>
             </CardHeader>
             <CardContent>
-              <ChartContainer config={chartConfig} className="h-[300px]">
+              <ChartContainer config={chartConfig} className="h-[300px] w-full">
                 <LineChart data={performanceData}>
                   <CartesianGrid strokeDasharray="3 3" />
                   <XAxis dataKey="mes" />
@@ -245,8 +245,8 @@ export default function InvestmentsPage() {
               <CardDescription>Cómo está distribuido tu portafolio</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="grid gap-6 md:grid-cols-2">
-                <ChartContainer config={allocationChartConfig} className="h-[250px]">
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                <ChartContainer config={allocationChartConfig} className="h-[250px] w-full">
                   <PieChart>
                     <Pie
                       data={allocationData}
