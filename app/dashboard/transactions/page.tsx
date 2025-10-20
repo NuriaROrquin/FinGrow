@@ -141,10 +141,16 @@ export default function TransactionsPage() {
   const [telegramResult, setTelegramResult] = useState<any>(null)
   const [useCameraMode, setUseCameraMode] = useState(false)
   const [stream, setStream] = useState<MediaStream | null>(null)
+  const [mounted, setMounted] = useState(false)
   const fileInputRef = useRef<HTMLInputElement>(null)
   const videoRef = useRef<HTMLVideoElement>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const { toast } = useToast()
+
+  // Evitar hidratación incorrecta
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   // Detectar parámetro mode=ocr en la URL
   useEffect(() => {
@@ -175,6 +181,11 @@ export default function TransactionsPage() {
 
   const totalIncome = mockTransactions.filter((t) => t.type === "income").reduce((sum, t) => sum + t.amount, 0)
   const totalExpense = mockTransactions.filter((t) => t.type === "expense").reduce((sum, t) => sum + t.amount, 0)
+
+  // Función de formateo consistente
+  const formatCurrency = (amount: number) => {
+    return `$${amount.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`
+  }
 
   const handleExportCSV = () => {
     // Crear encabezados del CSV
@@ -212,13 +223,26 @@ export default function TransactionsPage() {
   const startCamera = async () => {
     try {
       const mediaStream = await navigator.mediaDevices.getUserMedia({
-        video: { facingMode: 'environment' } // Preferir cámara trasera en móviles
+        video: {
+          facingMode: 'environment',
+          width: { ideal: 1280 },
+          height: { ideal: 720 }
+        }
       })
       setStream(mediaStream)
-      if (videoRef.current) {
-        videoRef.current.srcObject = mediaStream
-      }
       setUseCameraMode(true)
+
+      // Esperar a que el componente se monte antes de asignar el stream
+      setTimeout(() => {
+        if (videoRef.current) {
+          videoRef.current.srcObject = mediaStream
+          // Asegurar que el video se reproduzca
+          videoRef.current.play().catch(err => {
+            console.error('Error playing video:', err)
+          })
+        }
+      }, 100)
+
       toast({
         title: "Cámara activada",
         description: "Posiciona el ticket y toma una foto",
@@ -406,7 +430,7 @@ export default function TransactionsPage() {
                   </div>
                 ) : useCameraMode ? (
                   <div className="space-y-4">
-                    <div className="relative rounded-lg overflow-hidden border bg-black">
+                    <div className="relative rounded-lg overflow-hidden border">
                       <video
                         ref={videoRef}
                         autoPlay
@@ -684,7 +708,7 @@ export default function TransactionsPage() {
         <Card>
           <CardHeader className="pb-2">
             <CardDescription>Total Ingresos</CardDescription>
-            <CardTitle className="text-2xl text-success">${totalIncome.toLocaleString()}</CardTitle>
+            <CardTitle className="text-2xl text-success">{formatCurrency(totalIncome)}</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="flex items-center gap-1 text-sm text-muted-foreground">
@@ -697,7 +721,7 @@ export default function TransactionsPage() {
         <Card>
           <CardHeader className="pb-2">
             <CardDescription>Total Gastos</CardDescription>
-            <CardTitle className="text-2xl">${totalExpense.toLocaleString()}</CardTitle>
+            <CardTitle className="text-2xl">{formatCurrency(totalExpense)}</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="flex items-center gap-1 text-sm text-muted-foreground">
@@ -710,7 +734,7 @@ export default function TransactionsPage() {
         <Card>
           <CardHeader className="pb-2">
             <CardDescription>Balance Neto</CardDescription>
-            <CardTitle className="text-2xl text-success">${(totalIncome - totalExpense).toLocaleString()}</CardTitle>
+            <CardTitle className="text-2xl text-success">{formatCurrency(totalIncome - totalExpense)}</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="flex items-center gap-1 text-sm text-muted-foreground">
