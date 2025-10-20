@@ -1,5 +1,6 @@
 import Link from "next/link"
-import { Building2, User, TrendingUp } from "lucide-react"
+import { Building2, User } from "lucide-react"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
@@ -11,12 +12,19 @@ export default function HomePage() {
       <div className="container mx-auto px-4 py-16">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <TrendingUp className="h-12 w-12 text-primary" />
-            <h1 className="text-5xl font-bold text-foreground">FinGrow</h1>
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <Image
+                src="/9.png"
+                alt="FinGrow Logo"
+                width={80}
+                height={60}
+                className="object-contain"
+                priority
+            />
+            <h1 className="text-5xl font-bold text-secondary-foreground">FinGrow</h1>
           </div>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Plataforma de bienestar financiero para individuos y empresas
+          Plataforma de bienestar financiero para individuos y empresas
           </p>
         </div>
 

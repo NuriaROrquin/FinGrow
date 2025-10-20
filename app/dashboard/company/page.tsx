@@ -138,14 +138,14 @@ export default function CompanyDashboardPage() {
       </div>
 
       {/* Charts */}
-      <div className="grid gap-4 md:grid-cols-2">
+      <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
         <Card>
           <CardHeader>
             <CardTitle>Participación de Empleados</CardTitle>
             <CardDescription>Usuarios activos vs empleados inscritos en el tiempo</CardDescription>
           </CardHeader>
-          <CardContent>
-            <ChartContainer config={chartConfig} className="h-[300px]">
+          <CardContent className="overflow-x-auto">
+            <ChartContainer config={chartConfig} className="h-[300px] w-full min-w-[300px]">
               <LineChart data={employeeEngagement}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="month" />
@@ -168,13 +168,13 @@ export default function CompanyDashboardPage() {
           </CardContent>
         </Card>
 
-        <Card>
+        <Card className="w-full">
           <CardHeader>
             <CardTitle>Tendencia de Salud Financiera</CardTitle>
             <CardDescription>Puntaje promedio de salud financiera de empleados</CardDescription>
           </CardHeader>
-          <CardContent>
-            <ChartContainer config={chartConfig} className="h-[300px]">
+          <CardContent className="overflow-x-auto">
+            <ChartContainer config={chartConfig} className="h-[300px] w-full min-w-[300px]">
               <LineChart data={financialHealthScore}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="month" />

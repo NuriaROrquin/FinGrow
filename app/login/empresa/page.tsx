@@ -4,8 +4,9 @@ import type React from "react"
 
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { useRouter } from "next/navigation"
-import { Building2, Mail, Lock, TrendingUp, ArrowLeft } from "lucide-react"
+import { Building2, Mail, Lock, ArrowLeft } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -46,9 +47,16 @@ export default function EmpresaLoginPage() {
 
         {/* Logo */}
         <div className="text-center mb-8">
-          <div className="flex items-center justify-center gap-2 mb-2">
-            <TrendingUp className="h-10 w-10 text-primary" />
-            <h1 className="text-4xl font-bold text-foreground">FinGrow</h1>
+          <div className="flex flex-col items-center justify-center gap-3 mb-4">
+            <Image
+                src="/9.png"
+                alt="FinGrow Logo"
+                width={60}
+                height={40}
+                className="object-contain"
+                priority
+            />
+            <h1 className="text-4xl font-bold text-secondary-foreground">FinGrow</h1>
           </div>
           <p className="text-muted-foreground">Portal Empresarial</p>
         </div>
@@ -57,7 +65,7 @@ export default function EmpresaLoginPage() {
         <Card>
           <CardHeader className="space-y-1">
             <div className="mx-auto mb-4 h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center">
-              <Building2 className="h-8 w-8 text-primary" />
+              <Building2 className="h-8 w-8 text-primary"/>
             </div>
             <CardTitle className="text-2xl text-center">Acceso Empresarial</CardTitle>
             <CardDescription className="text-center">Ingresa las credenciales de tu empresa</CardDescription>

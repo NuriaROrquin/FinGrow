@@ -2,6 +2,7 @@
 
 import type React from "react"
 
+import Image from "next/image"
 import {
   SidebarProvider,
   Sidebar,
@@ -92,23 +93,27 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         <Sidebar>
           <SidebarHeader className="border-b border-sidebar-border">
             <div className="flex items-center gap-2 px-2 py-2">
-              <div className="flex size-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-                <TrendingUpIcon className="size-4" />
-              </div>
-              <div className="flex flex-col">
-                <span className="text-sm font-semibold">FinGrow</span>
-                <span className="text-xs text-muted-foreground">Bienestar Financiero</span>
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <Image
+                    src="/9.png"
+                    alt="FinGrow Logo"
+                    width={60}
+                    height={40}
+                    className="object-contain"
+                    priority
+                />
+                <h1 className="text-3xl font-bold text-secondary-foreground">FinGrow</h1>
               </div>
             </div>
           </SidebarHeader>
 
           <SidebarContent>
             {role === "empleado" && (
-              <div className="px-2 py-2">
-                <p className="px-2 text-xs font-medium text-muted-foreground mb-2">Personal</p>
-                <SidebarMenu>
-                  {empleadoNavigation.map((item) => (
-                    <SidebarMenuItem key={item.name}>
+                <div className="px-2 py-2">
+                  <p className="px-2 text-xs font-medium text-muted-foreground mb-2">Personal</p>
+                  <SidebarMenu>
+                    {empleadoNavigation.map((item) => (
+                        <SidebarMenuItem key={item.name}>
                       <SidebarMenuButton asChild isActive={pathname === item.href}>
                         <Link href={item.href}>
                           <item.icon className="size-4" />
