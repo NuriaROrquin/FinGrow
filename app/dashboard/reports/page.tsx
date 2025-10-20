@@ -193,7 +193,7 @@ export default function ReportsPage() {
 				</div>
 
 				{/* Report Tabs */}
-				<Tabs defaultValue="overview" className="space-y-4">
+				<Tabs defaultValue="overview" className="space-y-4 mt-8">
 					<TabsList>
 						<TabsTrigger value="overview">Resumen</TabsTrigger>
 						<TabsTrigger value="spending">Análisis de Gastos</TabsTrigger>
