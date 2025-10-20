@@ -94,15 +94,21 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
           <SidebarHeader className="border-b border-sidebar-border">
             <div className="flex items-center gap-2 px-2 py-2">
               <div className="flex items-center justify-center gap-3 mb-4">
-                <Image
-                    src="/9.png"
-                    alt="FinGrow Logo"
-                    width={60}
-                    height={40}
-                    className="object-contain"
-                    priority
-                />
-                <h1 className="text-3xl font-bold text-secondary-foreground">FinGrow</h1>
+                <Link
+                    href={role === "empresa" ? "/dashboard/company" : "/dashboard"}
+                    className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+                >
+                  <Image
+                      src="/9.png"
+                      alt="FinGrow Logo"
+                      width={60}
+                      height={40}
+                      className="object-contain"
+                      priority
+                  />
+                  <h1 className="text-3xl font-bold text-secondary-foreground">FinGrow</h1>
+                </Link>
+
               </div>
             </div>
           </SidebarHeader>
@@ -160,10 +166,29 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         </Sidebar>
 
         <SidebarInset>
-          <header className="flex h-14 items-center gap-4 border-b bg-background px-6">
-            <SidebarTrigger />
-            <div className="flex-1" />
+          <header className="grid grid-cols-3 h-14 items-center border-b bg-background px-6">
             <div className="flex items-center gap-4">
+              <SidebarTrigger />
+            </div>
+
+            <div className="justify-center flex">
+              <Link
+                  href={role === "empresa" ? "/dashboard/company" : "/dashboard"}
+                  className="flex items-center gap-2 hover:opacity-80 transition-opacity md:hidden"
+              >
+                <Image
+                    src="/9.png"
+                    alt="FinGrow Logo"
+                    width={20}
+                    height={10}
+                    className="object-contain cursor-pointer"
+                    priority
+                />
+                <h1 className="text-xl font-bold text-secondary-foreground">FinGrow</h1>
+              </Link>
+            </div>
+
+            <div className="flex items-center justify-end gap-4">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant="ghost" className="flex items-center gap-2">
