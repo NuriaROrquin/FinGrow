@@ -358,7 +358,7 @@ export default function TransactionsPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between flex-col">
+      <div className="flex items-center justify-between flex-col md:flex-row">
         <div>
           <h1 className="text-3xl font-bold text-balance">Transacciones</h1>
           <p className="text-muted-foreground mt-1">Rastrea y gestiona tus ingresos y gastos</p>
@@ -531,7 +531,13 @@ export default function TransactionsPage() {
 
           <Dialog open={isTelegramDialogOpen} onOpenChange={setIsTelegramDialogOpen}>
             <DialogTrigger asChild>
-              <Button variant="outline">
+              <Button
+                variant="outline"
+                onClick={(e) => {
+                  e.preventDefault()
+                  window.open('https://t.me/fingrowapp_bot', '_blank')
+                }}
+              >
                 <Send className="size-4" />
                 Mensaje Telegram
               </Button>
