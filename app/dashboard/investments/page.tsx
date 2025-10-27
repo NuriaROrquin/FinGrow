@@ -28,7 +28,7 @@ const mockPortfolio = [
     id: 1,
     activo: "Fondo S&P 500",
     tipo: "ETF",
-    monto: 22260,
+    monto: 2226000,
     rentabilidad: 1305,
     variacion: 5.87,
   },
@@ -36,7 +36,7 @@ const mockPortfolio = [
     id: 2,
     activo: "Apple Inc.",
     tipo: "Acción",
-    monto: 4562.5,
+    monto: 456200.5,
     rentabilidad: 187.5,
     variacion: 4.11,
   },
@@ -44,7 +44,7 @@ const mockPortfolio = [
     id: 3,
     activo: "Tesla Inc.",
     tipo: "Acción",
-    monto: 3573,
+    monto: 357300,
     rentabilidad: -114,
     variacion: -3.09,
   },
@@ -52,7 +52,7 @@ const mockPortfolio = [
     id: 4,
     activo: "Bonos del Tesoro",
     tipo: "Bono",
-    monto: 7980,
+    monto: 798000,
     rentabilidad: 130,
     variacion: 1.66,
   },
@@ -60,26 +60,26 @@ const mockPortfolio = [
     id: 5,
     activo: "Fondo Común FCI",
     tipo: "Fondo Común",
-    monto: 5200,
+    monto: 520000,
     rentabilidad: 312,
     variacion: 6.38,
   },
 ]
 
 const performanceData = [
-  { mes: "Ene", valor: 35000 },
-  { mes: "Feb", valor: 36200 },
-  { mes: "Mar", valor: 35800 },
-  { mes: "Abr", valor: 37500 },
-  { mes: "May", valor: 38200 },
-  { mes: "Jun", valor: 43575.5 },
+  { mes: "Ene", valor: 350000 },
+  { mes: "Feb", valor: 362000 },
+  { mes: "Mar", valor: 358000 },
+  { mes: "Abr", valor: 375000 },
+  { mes: "May", valor: 382000 },
+  { mes: "Jun", valor: 435750.5 },
 ]
 
 const allocationData = [
-  { nombre: "Acciones", valor: 8135.5, color: "#3b5998" },
-  { nombre: "ETFs", valor: 22260, color: "#10b981" },
-  { nombre: "Bonos", valor: 7980, color: "#f59e0b" },
-  { nombre: "Fondos Comunes", valor: 5200, color: "#8b5cf6" },
+  { nombre: "Acciones", valor: 813500.5, color: "#3b5998" },
+  { nombre: "ETFs", valor: 2226000, color: "#10b981" },
+  { nombre: "Bonos", valor: 798000, color: "#f59e0b" },
+  { nombre: "Fondos Comunes", valor: 520000, color: "#8b5cf6" },
 ]
 
 const educationalTips = [

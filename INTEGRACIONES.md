@@ -138,9 +138,9 @@ Juan usa Telegram para registrar sus gastos diarios:
 
 ### Caso 2: Procesamiento automático de facturas
 María vincula su Gmail y la plataforma detecta automáticamente:
-- Factura de Edenor: $4,500
-- Factura de Fibertel: $8,900
-- Factura de MetroGAS: $2,300
+- Factura de Edenor: $45.000
+- Factura de Fibertel: $89.000
+- Factura de MetroGAS: $23.000
 
 ### Caso 3: Escaneo de tickets
 Pedro toma fotos de sus tickets de compras y los procesa con OCR:

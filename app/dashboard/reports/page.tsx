@@ -11,30 +11,30 @@ import { Badge } from "@/components/ui/badge"
 import { useState } from "react"
 
 const monthlyIncomeExpense = [
-	{ month: "Ene", income: 5000, expense: 2400, savings: 2600 },
-	{ month: "Feb", income: 5000, expense: 1398, savings: 3602 },
-	{ month: "Mar", income: 5200, expense: 3800, savings: 1400 },
-	{ month: "Abr", income: 5200, expense: 3908, savings: 1292 },
-	{ month: "May", income: 5500, expense: 4800, savings: 700 },
-	{ month: "Jun", income: 5500, expense: 3800, savings: 1700 },
+	{ month: "Ene", income: 500000, expense: 240000, savings: 260000 },
+	{ month: "Feb", income: 500000, expense: 139800, savings: 360200 },
+	{ month: "Mar", income: 520000, expense: 380000, savings: 140000 },
+	{ month: "Abr", income: 520000, expense: 390800, savings: 129200 },
+	{ month: "May", income: 550000, expense: 480000, savings: 70000 },
+	{ month: "Jun", income: 550000, expense: 380000, savings: 170000 },
 ]
 
 const categoryBreakdown = [
-	{ category: "Comida", amount: 1200, percentage: 24 },
-	{ category: "Servicios", amount: 1400, percentage: 28 },
-	{ category: "Transporte", amount: 800, percentage: 16 },
-	{ category: "Entretenimiento", amount: 600, percentage: 12 },
-	{ category: "Compras", amount: 500, percentage: 10 },
-	{ category: "Otros", amount: 500, percentage: 10 },
+	{ category: "Comida", amount: 120000, percentage: 24 },
+	{ category: "Servicios", amount: 140000, percentage: 28 },
+	{ category: "Transporte", amount: 80000, percentage: 16 },
+	{ category: "Entretenimiento", amount: 60000, percentage: 12 },
+	{ category: "Compras", amount: 50000, percentage: 10 },
+	{ category: "Otros", amount: 50000, percentage: 10 },
 ]
 
 const savingsProgress = [
-	{ month: "Ene", target: 2000, actual: 2600 },
-	{ month: "Feb", target: 2000, actual: 3602 },
-	{ month: "Mar", target: 2000, actual: 1400 },
-	{ month: "Abr", target: 2000, actual: 1292 },
-	{ month: "May", target: 2000, actual: 700 },
-	{ month: "Jun", target: 2000, actual: 1700 },
+	{ month: "Ene", target: 200000, actual: 260000 },
+	{ month: "Feb", target: 200000, actual: 360200 },
+	{ month: "Mar", target: 200000, actual: 140000 },
+	{ month: "Abr", target: 200000, actual: 129200 },
+	{ month: "May", target: 200000, actual: 70000 },
+	{ month: "Jun", target: 200000, actual: 170000 },
 ]
 
 const chartConfig = {
@@ -183,7 +183,7 @@ export default function ReportsPage() {
 						<CardHeader className="pb-2">
 							<CardDescription>Ahorro Mensual Promedio</CardDescription>
 							<CardTitle className="text-2xl">
-								${avgMonthlySavings.toFixed(0)}
+								${avgMonthlySavings.toLocaleString()}
 							</CardTitle>
 						</CardHeader>
 						<CardContent>

@@ -25,40 +25,40 @@ const mockBudgets = [
   {
     id: 1,
     category: "Comida y Restaurantes",
-    limit: 500,
-    spent: 385.5,
+    limit: 500000,
+    spent: 385000.5,
     period: "mensual",
     icon: "🍔",
   },
   {
     id: 2,
     category: "Transporte",
-    limit: 300,
-    spent: 260,
+    limit: 300000,
+    spent: 260000,
     period: "mensual",
     icon: "🚗",
   },
   {
     id: 3,
     category: "Entretenimiento",
-    limit: 200,
-    spent: 230,
+    limit: 200000,
+    spent: 230000,
     period: "mensual",
     icon: "🎬",
   },
   {
     id: 4,
     category: "Servicios y Facturas",
-    limit: 400,
-    spent: 320,
+    limit: 400000,
+    spent: 320000,
     period: "mensual",
     icon: "💡",
   },
   {
     id: 5,
     category: "Compras",
-    limit: 350,
-    spent: 180,
+    limit: 350000,
+    spent: 180000,
     period: "mensual",
     icon: "🛍️",
   },
@@ -68,32 +68,32 @@ const mockSavingsGoals = [
   {
     id: 1,
     name: "Fondo de Emergencia",
-    target: 10000,
-    current: 6500,
+    target: 1000000,
+    current: 650000,
     deadline: "2025-12-31",
     icon: "🏥",
   },
   {
     id: 2,
     name: "Vacaciones en Europa",
-    target: 5000,
-    current: 2800,
+    target: 500000,
+    current: 280000,
     deadline: "2025-08-15",
     icon: "✈️",
   },
   {
     id: 3,
     name: "Laptop Nueva",
-    target: 2000,
-    current: 1650,
+    target: 200000,
+    current: 165000,
     deadline: "2025-06-30",
     icon: "💻",
   },
   {
     id: 4,
     name: "Entrada para Casa",
-    target: 50000,
-    current: 18500,
+    target: 5000000,
+    current: 1850000,
     deadline: "2027-01-01",
     icon: "🏠",
   },
@@ -219,14 +219,14 @@ export default function BudgetsPage() {
                   </CardHeader>
                   <CardContent className="space-y-3">
                     <div className="flex items-baseline justify-between">
-                      <span className="text-2xl font-bold">${budget.spent.toFixed(2)}</span>
-                      <span className="text-sm text-muted-foreground">de ${budget.limit.toFixed(2)}</span>
+                      <span className="text-2xl font-bold">${budget.spent.toLocaleString()}</span>
+                      <span className="text-sm text-muted-foreground">de ${budget.limit.toLocaleString()}</span>
                     </div>
                     <Progress value={percentage} className="h-2" />
                     <div className="flex items-center justify-between text-sm">
                       <span className={status.color}>{percentage.toFixed(1)}% usado</span>
                       <span className="text-muted-foreground">
-                        ${(budget.limit - budget.spent).toFixed(2)} restante
+                        ${(budget.limit - budget.spent).toLocaleString()} restante
                       </span>
                     </div>
                   </CardContent>
@@ -323,7 +323,7 @@ export default function BudgetsPage() {
                   Presupuesto de entretenimiento excedido
                 </p>
                 <p className="text-sm text-amber-700 dark:text-amber-300 mt-1">
-                  Has gastado $230 de tu presupuesto de $200 en entretenimiento. Considera reducir gastos
+                  Has gastado $23000 de tu presupuesto de $20000 en entretenimiento. Considera reducir gastos
                   discrecionales.
                 </p>
               </div>
@@ -344,7 +344,7 @@ export default function BudgetsPage() {
               <div>
                 <p className="font-medium text-blue-900 dark:text-blue-100">Oportunidad de ahorro</p>
                 <p className="text-sm text-blue-700 dark:text-blue-300 mt-1">
-                  Tienes $320 restantes en tu presupuesto. Considera asignar algo a tus metas de ahorro.
+                  Tienes $32000 restantes en tu presupuesto. Considera asignar algo a tus metas de ahorro.
                 </p>
               </div>
             </div>

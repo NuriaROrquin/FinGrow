@@ -633,7 +633,7 @@ export default function SettingsPage() {
                   <Wallet className="size-5 text-cyan-500" />
                   <div>
                     <CardTitle>Mercado Pago</CardTitle>
-                    <CardDescription>Recibe pagos y envía dinero fácilmente</CardDescription>
+                    <CardDescription>Sincronizá los movimientos que realizás en Mercado Pago de forma automática</CardDescription>
                   </div>
                 </div>
                 {mercadoPagoLinked && (
@@ -650,8 +650,7 @@ export default function SettingsPage() {
                   <Alert>
                     <Info className="h-4 w-4" />
                     <AlertDescription>
-                      Vincula tu cuenta de Mercado Pago para empezar a recibir pagos y enviar dinero
-                      desde la aplicación.
+                      Vincula tu cuenta de Mercado Pago para empezar a sincronizar tus movimientos de forma automática.
                     </AlertDescription>
                   </Alert>
 
@@ -693,8 +692,7 @@ export default function SettingsPage() {
                   <Alert>
                     <CheckCircle2 className="h-4 w-4" />
                     <AlertDescription>
-                      Tu cuenta de Mercado Pago está vinculada. Ahora puedes recibir pagos y enviar dinero
-                      fácilmente.
+                      Tu cuenta de Mercado Pago está vinculada. Los movimientos se sincronizan automáticamente cada hora.
                     </AlertDescription>
                   </Alert>
                 </>

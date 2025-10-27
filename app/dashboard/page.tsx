@@ -29,29 +29,29 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useState } from "react"
 
 const monthlySpendingData = [
-  { month: "Ene", amount: 2400 },
-  { month: "Feb", amount: 1398 },
-  { month: "Mar", amount: 3800 },
-  { month: "Abr", amount: 3908 },
-  { month: "May", amount: 4800 },
-  { month: "Jun", amount: 3800 },
+  { month: "Ene", amount: 240000 },
+  { month: "Feb", amount: 139800 },
+  { month: "Mar", amount: 380000 },
+  { month: "Abr", amount: 390800 },
+  { month: "May", amount: 480000 },
+  { month: "Jun", amount: 380000 },
 ]
 
 const incomeVsExpenseData = [
-  { month: "Ene", income: 5000, expense: 2400 },
-  { month: "Feb", income: 5000, expense: 1398 },
-  { month: "Mar", income: 5200, expense: 3800 },
-  { month: "Abr", income: 5200, expense: 3908 },
-  { month: "May", income: 5500, expense: 4800 },
-  { month: "Jun", income: 5500, expense: 3800 },
+  { month: "Ene", income: 500000, expense: 240000 },
+  { month: "Feb", income: 500000, expense: 139800 },
+  { month: "Mar", income: 520000, expense: 380000 },
+  { month: "Abr", income: 520000, expense: 390800 },
+  { month: "May", income: 550000, expense: 480000 },
+  { month: "Jun", income: 550000, expense: 380000 },
 ]
 
 const categoryData = [
-  { name: "Comida", value: 1200, color: "#3b5998" },
-  { name: "Transporte", value: 800, color: "#10b981" },
-  { name: "Entretenimiento", value: 600, color: "#f59e0b" },
-  { name: "Servicios", value: 1400, color: "#8b5cf6" },
-  { name: "Otros", value: 500, color: "#ec4899" },
+  { name: "Comida", value: 120000, color: "#3b5998" },
+  { name: "Transporte", value: 80000, color: "#10b981" },
+  { name: "Entretenimiento", value: 60000, color: "#f59e0b" },
+  { name: "Servicios", value: 140000, color: "#8b5cf6" },
+  { name: "Otros", value: 50000, color: "#ec4899" },
 ]
 
 const chartConfig = {
@@ -108,7 +108,7 @@ export default function DashboardPage() {
         <Card>
           <CardHeader className="pb-2">
             <CardDescription>Saldo Total</CardDescription>
-            <CardTitle className="text-2xl">$12,450.00</CardTitle>
+            <CardTitle className="text-2xl">$1,245,000.00</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="flex items-center gap-1 text-sm text-success">
@@ -121,7 +121,7 @@ export default function DashboardPage() {
         <Card>
           <CardHeader className="pb-2">
             <CardDescription>Ingresos Mensuales</CardDescription>
-            <CardTitle className="text-2xl">$5,500.00</CardTitle>
+            <CardTitle className="text-2xl">$550,000.00</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="flex items-center gap-1 text-sm text-success">
@@ -134,7 +134,7 @@ export default function DashboardPage() {
         <Card>
           <CardHeader className="pb-2">
             <CardDescription>Gastos Mensuales</CardDescription>
-            <CardTitle className="text-2xl">$3,800.00</CardTitle>
+            <CardTitle className="text-2xl">$380,000.00</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="flex items-center gap-1 text-sm text-destructive">
@@ -395,17 +395,17 @@ export default function DashboardPage() {
         <CardContent>
           <div className="space-y-4">
             {[
-              { name: "Supermercado", amount: -85.5, date: "Hoy", category: "Comida", icon: CreditCardIcon },
-              { name: "Depósito de Salario", amount: 5500.0, date: "Ayer", category: "Ingresos", icon: ArrowUpIcon },
+              { name: "Supermercado", amount: -8500.5, date: "Hoy", category: "Comida", icon: CreditCardIcon },
+              { name: "Depósito de Salario", amount: 550000.0, date: "Ayer", category: "Ingresos", icon: ArrowUpIcon },
               {
                 name: "Factura de Luz",
-                amount: -120.0,
+                amount: -12000.0,
                 date: "Hace 2 días",
                 category: "Servicios",
                 icon: CreditCardIcon,
               },
-              { name: "Restaurante", amount: -45.0, date: "Hace 3 días", category: "Comida", icon: CreditCardIcon },
-              { name: "Gasolinera", amount: -60.0, date: "Hace 4 días", category: "Transporte", icon: CreditCardIcon },
+              { name: "Restaurante", amount: -4500.0, date: "Hace 3 días", category: "Comida", icon: CreditCardIcon },
+              { name: "Nafta", amount: -6000.0, date: "Hace 4 días", category: "Transporte", icon: CreditCardIcon },
             ].map((transaction, index) => (
               <div key={index} className="flex items-center justify-between border-b pb-4 last:border-0 last:pb-0">
                 <div className="flex items-center gap-3">
